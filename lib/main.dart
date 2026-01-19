@@ -38,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text(widget.title),
+        backgroundColor: Colors.black,
+        title: Text(widget.title, style: TextStyle(color: Colors.white)),
       ),
 
       body: FutureBuilder<List<Users>>(
@@ -77,10 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 4,
-                          ),
+                          border: Border.all(color: Colors.black, width: 4),
                         ),
 
                         child: CircleAvatar(
@@ -90,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
 
-                      const SizedBox(height: 15),
+                      SizedBox(height: 15),
 
                       Text(
                         user.name,
@@ -101,13 +98,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
 
                       SizedBox(height: 10),
-                      Text("Age: ${user.age}"),
+                      Text("Age: ${user.age}", style: TextStyle(fontSize: 16)),
 
                       SizedBox(height: 5),
-                      Text("Birthdate: ${user.birthDate.substring(0, 10)}"),
+                      Text(
+                        "Birthdate: ${user.birthDate.substring(0, 10)}",
+                        style: TextStyle(fontSize: 16),
+                      ),
 
                       SizedBox(height: 5),
-                      Text("City: ${user.city}"),
+                      Text(
+                        "City: ${user.city}",
+                        style: TextStyle(fontSize: 16),
+                      ),
                     ],
                   ),
                 ),
